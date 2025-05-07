@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# Bitcoin Fee Estimator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time Bitcoin transaction fee estimation tool built with React, TypeScript, and Vite. This web application helps users make informed decisions about Bitcoin transaction fees by providing current fee rates, transaction status checking, and fee trend visualization.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Fee Estimates**: Shows current Bitcoin transaction fees for different urgency levels (10 minutes to 6 hours)
+- **Fee Calculator**: Converts satoshis/vByte to USD based on current Bitcoin price
+- **Transaction Status Checker**: Verify the status of any Bitcoin transaction with detailed fee analysis
+- **Fee Trend Visualization**: Chart showing fee trends over the last 5 minutes
+- **Live Bitcoin Price**: Displays current Bitcoin price from CoinGecko
+- **Auto Updates**: Data refreshes every 60 seconds
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Vite
+- TailwindCSS
+- Chart.js
+- Axios
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## APIs Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- mempool.space API for Bitcoin fee and transaction data
+- CoinGecko API for Bitcoin price data
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Development
+
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Contributing
+
+Contributions are welcome! Feel free to submit issues and pull requests.
+
+## Data Sources
+
+- Fee data is sourced from [mempool.space](https://mempool.space)
+- Bitcoin price data is from [CoinGecko](https://coingecko.com)
+
+## License
+
+This project is open source and available under the MIT license.
