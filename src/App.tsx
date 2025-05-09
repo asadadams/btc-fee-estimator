@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Chart from 'chart.js/auto';
 import { QRCodeSVG } from 'qrcode.react';
+import { Analytics } from "@vercel/analytics/react"
 
 // Define types for API responses
 interface FeeData {
@@ -328,6 +329,7 @@ const App = () => {
         <p>Data from <a href="https://mempool.space" className="text-orange-500">mempool.space</a> and <a href="https://coingecko.com" className="text-orange-500">CoinGecko</a></p>
         <p>Updates every 60 seconds</p>
       </footer>
+      <Analytics />
     </div>
   );
 };
